@@ -65,7 +65,9 @@ isPasswordValid="^.{8,}$"
 isPasswordValid1="[A-Z]{1,}"
 #PASSWORD MUST HAVE ATLEAST ONE NUMBER
 isPasswordValid2="[0-9]{1,}"
-if [[ $password =~ $isPasswordValid2 ]]
+#PASSWORD MUST HAVE ATLEAST ONE SPECIAL CHARACTOR
+isPasswordValid3="^[0-9a-zA-Z]*[!@#^%&*][A-Za-z0-9]*$"
+if [[ $password =~ $isPasswordValid3 ]]
    then
       echo "valid"
    else
