@@ -61,7 +61,8 @@ printf "Please enter the password:\n"
 read password
 #PASSWORD 8 CHARACTOR
 isPasswordValid="^.{8,}$"
-if [[ $password =~ $isPasswordValid ]]
+isPasswordValid1="[A-Z]{1,}"
+if [[ $password =~ $isPasswordValid1 ]]
    then
       echo "valid"
    else
