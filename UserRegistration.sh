@@ -55,7 +55,22 @@ if [[ $mobileNumber =~ $isMobileNumberValid ]]
 fi
 }
 
+#PASSWORD VALIDATION
+function password(){
+printf "Please enter the password:\n"
+read password
+#PASSWORD 8 CHARACTOR
+isPasswordValid="^.{8,}$"
+if [[ $password =~ $isPasswordValid ]]
+   then
+      echo "valid"
+   else
+      echo "invalid"
+fi
+}
+
 firstName
 lastName
 emailAddress
 mobileNumber
+password
