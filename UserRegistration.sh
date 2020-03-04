@@ -42,6 +42,21 @@ if [[ $emailAddress =~ $isEmailValid ]]
 fi
 }
 
+#VALIDATE MOBILE NUMBER
+function mobileNumber {
+printf "Please enter the mobile number:\n"
+read mobileNumber
+isMobileNumberValid="^[0-9]{2}[ ]{1}[0-9]{10}$"
+if [[ $mobileNumber =~ $isMobileNumberValid ]]
+   then
+      printf "valid\n"
+   else
+      printf "invalid\n"
+fi
+}
+
+
 firstName
 lastName
 emailAddress
+mobileNumber
