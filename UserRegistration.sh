@@ -55,7 +55,6 @@ if [[ $mobileNumber =~ $isMobileNumberValid ]]
 fi
 }
 
-
 firstName
 lastName
 emailAddress
