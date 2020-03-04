@@ -57,6 +57,7 @@ fi
 
 #PASSWORD VALIDATION
 function password(){
+local count=0
 printf "Please enter the password:\n"
 read password
 #PASSWORD 8 CHARACTOR
@@ -67,16 +68,32 @@ isPasswordValid1="[A-Z]{1,}"
 isPasswordValid2="[0-9]{1,}"
 #PASSWORD MUST HAVE ATLEAST ONE SPECIAL CHARACTOR
 isPasswordValid3="^[0-9a-zA-Z]*[!@#^%&*][A-Za-z0-9]*$"
-if [[ $password =~ $isPasswordValid3 ]]
-   then
-      echo "valid"
-   else
-      echo "invalid"
-fi
+   if [[ $password =~ $isPasswordValid ]]
+      then
+         (( count++ ))
+   fi
+   if [[ $password =~ $isPasswordValid1 ]]
+         then
+         (( count++ ))
+   fi
+   if [[ $password =~ $isPasswordValid2 ]]
+         then
+         (( count++ ))
+   fi
+   if [[ $password = $isPasswordValid3 ]]
+         then
+         (( count++ ))
+   fi
+   if [[ $count == 4 ]]
+      then  
+         printf "valid"
+      else
+         printf "invalid"
+   fi
 }
 
-firstName
-lastName
-emailAddress
-mobileNumber
+# firstName
+# lastName
+# emailAddress
+# mobileNumber
 password
