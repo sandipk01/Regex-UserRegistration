@@ -73,27 +73,27 @@ isPasswordValid3="^[0-9a-zA-Z]*[!@#^%&*][A-Za-z0-9]*$"
          (( count++ ))
    fi
    if [[ $password =~ $isPasswordValid1 ]]
-         then
+      then
          (( count++ ))
    fi
    if [[ $password =~ $isPasswordValid2 ]]
-         then
+      then
          (( count++ ))
    fi
-   if [[ $password = $isPasswordValid3 ]]
-         then
+   if [[ $password =~ $isPasswordValid3 ]]
+      then
          (( count++ ))
    fi
    if [[ $count == 4 ]]
       then  
-         printf "valid"
+         printf "valid\n"
       else
-         printf "invalid"
+         printf "invalid\n"
    fi
 }
 
-# firstName
-# lastName
-# emailAddress
-# mobileNumber
+firstName
+lastName
+emailAddress
+mobileNumber
 password
