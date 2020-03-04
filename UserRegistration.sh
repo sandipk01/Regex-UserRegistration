@@ -61,8 +61,11 @@ printf "Please enter the password:\n"
 read password
 #PASSWORD 8 CHARACTOR
 isPasswordValid="^.{8,}$"
+#PASSWORD MUST HAVE ATLEAST ONE UPPER CASE CHARACTOR
 isPasswordValid1="[A-Z]{1,}"
-if [[ $password =~ $isPasswordValid1 ]]
+#PASSWORD MUST HAVE ATLEAST ONE NUMBER
+isPasswordValid2="[0-9]{1,}"
+if [[ $password =~ $isPasswordValid2 ]]
    then
       echo "valid"
    else
